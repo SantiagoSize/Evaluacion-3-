@@ -161,3 +161,88 @@ def opciones_oficina():
             return
         else:
             print("Opcion incorrecta, intente nuevamente.")
+def mostrar_detalles_casa(tamaño, habitaciones, baños, personas, mascotas, costo):
+    print(f"\nHa seleccionado una casa {tamaño} con {habitaciones} habitaciones y {baños} baños.")
+    print(f"Capacidad para {personas} personas.")
+    print(f"Permite mascotas?: {'Sí' if mascotas else 'No'}")
+    print(f"Precio del arriendo: {costo}")
+    confirmar_arriendo()
+def mostrar_detalles_departamento(tamaño, habitaciones, baños, personas, mascotas, costo):
+    print(f"\nHa seleccionado un departamento {tamaño} con {habitaciones} habitaciones y {baños} baños.")
+    print(f"Capacidad para {personas} personas.")
+    print(f"Permite mascotas?: {'Sí' if mascotas else 'No'}")
+    print(f"Precio del arriendo: {costo}")
+    confirmar_arriendo()
+def mostrar_detalles_oficina(tamaño, salas, baños, personas, mascotas, costo):
+    print(f"\nHa seleccionado una oficina {tamaño} con {salas} salas y {baños} baños.")
+    print(f"Capacidad para {personas} personas.")
+    print(f"Permite mascotas?: {'Sí' if mascotas else 'No'}")
+    print(f"Precio del arriendo: {costo}")
+    confirmar_arriendo()
+def confirmar_arriendo():
+    while True:
+        print("\n¿Está seguro de que desea arrendar esta vivienda?")
+        print("1. Si")
+        print("2. No")
+        opcion = input("Seleccione una opcion (1/2): ").strip().lower()
+        
+        if opcion == "1":
+            print("Gracias por su arriendo.")
+            menu_post_arriendo()
+            break
+        elif opcion == "2":
+            print("Cancelando el arriendo.")
+            break
+        else:
+            print("Opcion incorrecta, intente nuevamente.")
+def menu_post_arriendo():
+    while True:
+        print("\n¿Que desea hacer ahora?")
+        print("1. Volver al inicio")
+        print("2. Arrendar otra vivienda")
+        print("3. Salir del programa")
+        opcion = input("Seleccione una opcion (1/2/3): ").strip().lower()
+        
+        if opcion == "1":
+            return  
+        elif opcion == "2":
+            menu_arriendos()  
+            break
+        elif opcion == "3":
+            print("Saliendo del programa.")
+            exit()  
+        else:
+            print("Opcion incorrecta, intente nuevamente.")
+def especificaciones_arriendo():
+    print("\nIngrese las especificaciones de la vivienda en arriendo:")
+    tamaño = input("1. Tamaño (en metros cuadrados): ")
+    habitaciones = input("2. Numero de habitaciones: ")
+    baños = input("3. Numero de baños: ")
+    direccion = input("4. Direccion: ")
+    precio = input("5. Precio del arriendo: ")
+    return tamaño, habitaciones, baños, direccion, precio
+def mostrar_informacion_vivienda(tamaño, habitaciones, baños, direccion, precio):
+    print("\nInformacion de la vivienda en arriendo:")
+    print(f"Tamaño: {tamaño} m2")
+    print(f"Habitaciones: {habitaciones}")
+    print(f"Baños: {baños}")
+    print(f"Direccion: {direccion}")
+    print(f"Precio del arriendo: {precio}")
+def agregar_vivienda_arrendada(vivienda):
+    viviendas_arrendadas.append(vivienda)
+def agregar_vivienda_publicada(vivienda):
+    viviendas_publicadas.append(vivienda)
+def ver_viviendas():
+    print("\nViviendas Arrendadas:")
+    if viviendas_arrendadas:
+        for vivienda in viviendas_arrendadas:
+            print(vivienda)
+    else:
+        print("No hay viviendas arrendadas.")
+
+    print("\nViviendas Publicadas:")
+    if viviendas_publicadas:
+        for vivienda in viviendas_publicadas:
+            print(vivienda)
+    else:
+        print("No hay viviendas publicadas.")
