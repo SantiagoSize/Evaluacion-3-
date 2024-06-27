@@ -103,8 +103,8 @@ def opciones_casa():
         opcion = input("Seleccione una opcion (1/2/3/4): ").strip().lower()
         
         if opcion == "1":
-            mostrar_detalles_casa("pequeña", 2, 1, 4, True, 300000)
-            break
+         mostrar_detalles_casa("pequeña", 2, 1, 4, True, 300000)
+         break
         elif opcion == "2":
             mostrar_detalles_casa("mediana", 3, 2, 6, True, 500000)
             break
@@ -159,5 +159,66 @@ def opciones_oficina():
             break
         elif opcion == "4":
             return
+        else:
+            print("Opcion incorrecta, intente nuevamente.")
+
+def opciones_oficina():
+    while True:
+        print("\nSeleccione una opcion de oficina:")
+        print("1. Oficina pequeña (1 sala, 1 baño)")
+        print("2. Oficina mediana (2 salas, 1 baño)")
+        print("3. Oficina grande (3 salas, 2 baños)")
+        print("4. Volver")
+        opcion = input("Seleccione una opcion (1/2/3/4): ").strip().lower()
+
+        if opcion == "1":
+            mostrar_detalles_oficina("pequeña", 1, 1, 4, False, 500000)
+            break
+        elif opcion == "2":
+            mostrar_detalles_oficina("mediana", 2, 1, 8, False, 1000000)
+            break
+        elif opcion == "3":
+            mostrar_detalles_oficina("grande", 3, 2, 12, False, 1500000)
+            break
+        elif opcion == "4":
+            return
+        else:
+            print("Opcion incorrecta, intente nuevamente.")
+
+def mostrar_detalles_casa(tamaño, habitaciones, baños, personas, mascotas, costo):
+    print(f"\nHa seleccionado una casa {tamaño} con {habitaciones} habitaciones y {baños} baños.")
+    print(f"Capacidad para {personas} personas.")
+    print(f"Permite mascotas?: {'Sí' if mascotas else 'No'}")
+    print(f"Precio del arriendo: {costo}")
+    confirmar_arriendo()
+
+def mostrar_detalles_departamento(tamaño, habitaciones, baños, personas, mascotas, costo):
+    print(f"\nHa seleccionado un departamento {tamaño} con {habitaciones} habitaciones y {baños} baños.")
+    print(f"Capacidad para {personas} personas.")
+    print(f"Permite mascotas?: {'Sí' if mascotas else 'No'}")
+    print(f"Precio del arriendo: {costo}")
+    confirmar_arriendo()
+
+def mostrar_detalles_oficina(tamaño, salas, baños, personas, mascotas, costo):
+    print(f"\nHa seleccionado una oficina {tamaño} con {salas} salas y {baños} baños.")
+    print(f"Capacidad para {personas} personas.")
+    print(f"Permite mascotas?: {'Sí' if mascotas else 'No'}")
+    print(f"Precio del arriendo: {costo}")
+    confirmar_arriendo()
+
+def confirmar_arriendo():
+    while True:
+        print("\n¿Está seguro de que desea arrendar esta vivienda?")
+        print("1. Si")
+        print("2. No")
+        opcion = input("Seleccione una opcion (1/2): ").strip().lower()
+
+        if opcion == "1":
+            print("Gracias por su arriendo.")
+            menu_post_arriendo()
+            break
+        elif opcion == "2":
+            print("Cancelando el arriendo.")
+            break
         else:
             print("Opcion incorrecta, intente nuevamente.")
