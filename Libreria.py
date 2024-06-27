@@ -52,3 +52,23 @@ def solicitar_continuacion():
             return True
         elif opcion == "2":
             return False
+        
+def solicitar_informacion_arriendo():
+    personas = input("3. Cuantas personas seran en el lugar?: ")
+    mascotas = input("4. Tienen mascotas? (Si/No): ")
+    presupuesto = input("5. Cuanto dinero tienen para el arriendo?: ")
+    return personas, mascotas, presupuesto
+
+def solicitar_liquidaciones():
+    liquidaciones = []
+    for x in range(1, 4):
+        liquidacion = input(f"Ingrese su sueldo #{x} de los últimos 3 meses: ")
+        liquidaciones.append(liquidacion)
+    return liquidaciones
+
+def mostrar_informacion_arriendo(personas, mascotas, presupuesto, liquidaciones):
+    print("\nInformacion del arriendo:")
+    print(f"Numero de personas: {personas}")
+    print(f"Tienen mascotas?: {mascotas}")
+    print(f"Presupuesto: {presupuesto}")
+    print(f"Sueldo de los últimos tres meses: {', '.join(liquidaciones)}")
