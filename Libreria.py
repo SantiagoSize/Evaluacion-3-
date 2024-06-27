@@ -72,3 +72,92 @@ def mostrar_informacion_arriendo(personas, mascotas, presupuesto, liquidaciones)
     print(f"Tienen mascotas?: {mascotas}")
     print(f"Presupuesto: {presupuesto}")
     print(f"Sueldo de los últimos tres meses: {', '.join(liquidaciones)}")
+
+def menu_arriendos():
+    while True:
+        print("\nSeleccione el tipo de arriendo:")
+        print("1. Casa")
+        print("2. Departamento")
+        print("3. Oficina")
+        print("4. Volver")
+        opcion = input("Seleccione una opcion (1/2/3/4): ").strip().lower()
+        
+        if opcion == "1":
+            opciones_casa()
+        elif opcion == "2":
+            opciones_departamento()
+        elif opcion == "3":
+            opciones_oficina()
+        elif opcion == "4":
+            return
+        else:
+            print("Opcion incorrecta, intente nuevamente.")
+
+def opciones_casa():
+    while True:
+        print("\nSeleccione una opcion de casa:")
+        print("1. Casa pequeña (2 habitaciones, 1 baño)")
+        print("2. Casa mediana (3 habitaciones, 2 baños)")
+        print("3. Casa grande (4 habitaciones, 3 baños)")
+        print("4. Volver")
+        opcion = input("Seleccione una opcion (1/2/3/4): ").strip().lower()
+        
+        if opcion == "1":
+            mostrar_detalles_casa("pequeña", 2, 1, 4, True, 300000)
+            break
+        elif opcion == "2":
+            mostrar_detalles_casa("mediana", 3, 2, 6, True, 500000)
+            break
+        elif opcion == "3":
+            mostrar_detalles_casa("grande", 4, 3, 8, False, 800000)
+            break
+        elif opcion == "4":
+            return
+        else:
+            print("Opcion incorrecta, intente nuevamente.")
+
+def opciones_departamento():
+    while True:
+        print("\nSeleccione una opcion de departamento:")
+        print("1. Departamento pequeño (1 habitacion, 1 baño)")
+        print("2. Departamento mediano (2 habitaciones, 1 baño)")
+        print("3. Departamento grande (3 habitaciones, 2 baños)")
+        print("4. Volver")
+        opcion = input("Seleccione una opcion (1/2/3/4): ").strip().lower()
+        
+        if opcion == "1":
+            mostrar_detalles_departamento("pequeño", 1, 1, 2, False, 200000)
+            break
+        elif opcion == "2":
+            mostrar_detalles_departamento("mediano", 2, 1, 4, True, 400000)
+            break
+        elif opcion == "3":
+            mostrar_detalles_departamento("grande", 3, 2, 6, True, 600000)
+            break
+        elif opcion == "4":
+            return
+        else:
+            print("Opcion incorrecta, intente nuevamente.")
+
+def opciones_oficina():
+    while True:
+        print("\nSeleccione una opcion de oficina:")
+        print("1. Oficina pequeña (1 sala, 1 baño)")
+        print("2. Oficina mediana (2 salas, 1 baño)")
+        print("3. Oficina grande (3 salas, 2 baños)")
+        print("4. Volver")
+        opcion = input("Seleccione una opcion (1/2/3/4): ").strip().lower()
+        
+        if opcion == "1":
+            mostrar_detalles_oficina("pequeña", 1, 1, 4, False, 500000)
+            break
+        elif opcion == "2":
+            mostrar_detalles_oficina("mediana", 2, 1, 8, False, 1000000)
+            break
+        elif opcion == "3":
+            mostrar_detalles_oficina("grande", 3, 2, 12, False, 1500000)
+            break
+        elif opcion == "4":
+            return
+        else:
+            print("Opcion incorrecta, intente nuevamente.")
